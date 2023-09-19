@@ -14,4 +14,4 @@ def root():
 
   gtag('config', 'G-WVM9JHZGF4');
 </script>"""
-    return "Hello from Space! 🚀"
+    return prefix_google + "Hello from Space! 🚀"
