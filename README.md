@@ -77,5 +77,3 @@ Bonus :
 ## Options Supplémentaires
 
 - Ajout d'un bouton d'événement Google Analytics.
-
-Félicitations pour avoir accompli le TP1, incluant la création, le versionnage, le déploiement, et le suivi de votre application Python.
