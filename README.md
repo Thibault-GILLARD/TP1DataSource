@@ -6,11 +6,13 @@ Thibault Gillard
 
 Analitics image 
 
-![Image Description](source/Capture d’écran 2023-09-25 à 08.42.08.png)
+![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.42.08.png?raw=true)
 
 Dashboard image
 
-![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-19%20%C3%A0%2016.30.13.png)
+![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-19%20%C3%A0%2016.34.28.png?raw=true)
+
+![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.45.24.png?raw=true)
 
 Bonus :
 
@@ -33,6 +35,7 @@ Bonus :
   
     return prefix_google + "Hello from Space!" + button_html + button_click_tracking
 ```
+![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.45.24.png?raw=true)
 
 # TP1 Résumé
 
