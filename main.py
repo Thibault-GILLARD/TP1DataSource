@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template
 import logging
 from logging.config import dictConfig
-# import requests
+import requests
+import json
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templatesTP')
 
 @app.route("/")
 def root():
@@ -48,6 +49,17 @@ def logger():
 
     return render_template('logger.html')
 
-app.route("/cookie")
-def cookie():
-    return render_template('cookie.html')
+@app.route("/cookies",methods=['GET', 'POST'])
+def cookies():
+    if request.method == 'POST':
+        # Make a request to Google
+        try:
+            req = requests.get("https://www.google.com/")
+            # Get the cookies in cookies.html
+            cookies = req.cookies
+            # Return the cookies
+            return render_template('cookies.html', cookies=cookies)
+        except:
+            return "Error"
+         
+    return render_template('cookies.html')
