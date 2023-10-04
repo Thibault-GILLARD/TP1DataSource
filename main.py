@@ -1,4 +1,7 @@
-from flask import Flask
+from flask import Flask, request, render_template
+import logging
+from logging.config import dictConfig
+# import requests
 
 app = Flask(__name__)
 
@@ -32,3 +35,19 @@ def root():
     """
   
     return prefix_google + "Hello from Space!" + button_html + button_click_tracking
+
+
+@app.route("/logger",methods=['GET', 'POST'])
+def logger():
+
+    if request.method == 'POST':
+        text = request.form.get('textarea')
+        print(text)
+        
+        return render_template('logger.html', text=text)
+
+    return render_template('logger.html')
+
+app.route("/cookie")
+def cookie():
+    return render_template('cookie.html')
