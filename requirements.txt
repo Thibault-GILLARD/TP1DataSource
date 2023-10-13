@@ -1,2 +1,6 @@
 Flask
 gunicorn
+streamlit
+google-auth-httplib2
+google-auth-oauthlib
+google-auth

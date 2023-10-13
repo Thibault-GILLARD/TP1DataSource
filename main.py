@@ -3,6 +3,8 @@ import logging
 from logging.config import dictConfig
 import requests
 import json
+#import strimlit as st
+
 
 app = Flask(__name__, template_folder='templatesTP')
 
@@ -54,10 +56,12 @@ def cookies():
     if request.method == 'POST':
         # Make a request to Google
         try:
-            req = requests.get("https://www.google.com/")
+            req = requests.get("https://analytics.google.com/analytics/web/#/p407435764/reports/dashboard?r=reporting-hub")
             # Get the cookies in cookies.html
             cookies = req.cookies
             # Return the cookies
+            
+            eq2 = requests.get("https://www.googletagmanager.com/gtag/js?id=G-WVM9JHZGF4")
             return render_template('cookies.html', cookies=cookies)
         except:
             return "Error"
