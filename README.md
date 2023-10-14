@@ -2,82 +2,87 @@
 
 Thibault Gillard
 
-## Resultat du TP2
+## TP2 Results
 
+![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2016.33.20.gif?raw=true)
 
+For the TP2 the stategie was to do the different tasks in different roots and when everything was working to merge them all together into the main root, with some css to make it look better.
 
-## Resultat du TP1
+First was to Manipulate cookies:
+    
+    ```python   
+    
 
-Analitics image 
+## TP1 Results
+
+Analytics Image
 
 ![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.42.08.png?raw=true)
 
-Dashboard image
+Dashboard Image
 
 ![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-19%20%C3%A0%2016.34.28.png?raw=true)
 
 ![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.45.24.png?raw=true)
 
-Bonus :
+Bonus:
 
 ```html
 # This is the button that we will be displayed on the page
-    button_html = """
-    <button onclick="sendEventToGA()">Click Me</button>"""
+button_html = """
+<button onclick="sendEventToGA()">Click Me</button>"""
     
-    # This is the code that will be executed when the button is clicked
-    button_click_tracking = """ 
-    <script>
-        function sendEventToGA() {
-            gtag('event', 'button_click', {
-                'event_category': 'Custom Event Category',
-                'event_label': 'Button Clicked'
-            });
-        }
-    </script>
-    """
-  
-    return prefix_google + "Hello from Space!" + button_html + button_click_tracking
+# This is the code that will be executed when the button is clicked
+button_click_tracking = """ 
+<script>
+    function sendEventToGA() {
+        gtag('event', 'button_click', {
+            'event_category': 'Custom Event Category',
+            'event_label': 'Button Clicked'
+        });
+    }
+</script>
 ```
+
 ![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-09-25%20%C3%A0%2008.45.24.png?raw=true)
 
-# TP1 Résumé
+# TP1 Summary
 
-## Objectif
+## Objective
 
-- Créer une application Python avec Flask.
-- Versionner le code avec GitHub.
-- Déployer l'application avec Deta.
-- Intégrer Google Analytics pour le suivi des utilisateurs.
-- Préparer un rapport récapitulatif.
+- Create a Python application with Flask.
+- Version control the code with GitHub.
+- Deploy the application with Deta.
+- Integrate Google Analytics for user tracking.
+- Prepare a summary report.
 
-## Réalisations
+## Achievements
 
-### Application Python avec Deta
+### Python Application with Deta
 
-- Inscription/connexion à Deta.
-- Déploiement avec Deta Micro.
-- Accès au tableau de bord Deta.
+- Registration/login to Deta.
+- Deployment with Deta Micro.
+- Access to the Deta dashboard.
 
-### Versionnage avec GitHub
+### Version Control with GitHub
 
-- Connexion à GitHub.
-- Création d'un dépôt GitHub.
-- Initialisation de Git.
-- Création de fichiers essentiels (README, .gitignore, requirements.txt).
+- Connection to GitHub.
+- Creation of a GitHub repository.
+- Git initialization.
+- Creation of essential files (README, .gitignore, requirements.txt).
 
 ### Google Analytics
 
-- Connexion à Google Analytics.
-- Création d'un compte et d'une propriété.
-- Intégration du code de suivi Google Analytics.
-- Test d'installation.
-- Consultation du tableau de bord Google Analytics.
+- Connection to Google Analytics.
+- Creation of an account and property.
+- Integration of Google Analytics tracking code.
+- Installation testing.
+- Viewing the Google Analytics dashboard.
 
-### Rapport
+### Report
 
-- Création d'un rapport PDF incluant nom, URL de l'application, capture d'écran du tableau de bord Google Analytics, et URL du projet GitHub.
+- Creation of a PDF report including name, application URL, screenshot of the Google Analytics dashboard, and GitHub project URL.
 
-## Options Supplémentaires
+## Additional Options
 
-- Ajout d'un bouton d'événement Google Analytics.
+- Addition of a Google Analytics event button.
