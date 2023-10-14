@@ -1,6 +1,4 @@
-# TP1DataSource
-
-Thibault Gillard
+# DataSource Thibault Gillard
 
 ## TP2 Results
 
