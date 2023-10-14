@@ -21,7 +21,7 @@ property_id = "407435764"
 starting_date = "30daysAgo"
 ending_date = "yesterday"
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/Users/thibaultgillard/Documents/EPF/5A/Data Source/TP1/My First Project IAM.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/Users/thibaultgillard/Documents/EPF/5A/Data Source/TP1/key.json'
 
 client = BetaAnalyticsDataClient()
 
@@ -123,10 +123,12 @@ def ana():
 
     return render_template('ana.html')
 
+
 @app.route("/", methods=['GET', 'POST'])
 def main():
     cookies = None
     row_count = None
+    logged_text = None  # Initialize for logging text
 
     if request.method == 'POST':
         if 'get_cookies' in request.form:
@@ -144,7 +146,10 @@ def main():
             except Exception as e:
                 return f"Error: {str(e)}"
 
-    return render_template('main.html', cookies=cookies, row_count=row_count)
+        # Check for logged text
+        logged_text = request.form.get('textarea')  # Get text from the textarea
+
+    return render_template('main.html', cookies=cookies, row_count=row_count, logged_text=logged_text)
 
 
 if __name__ == "__main__":

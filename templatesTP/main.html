@@ -34,5 +34,20 @@
         <p>{{ row_count }}</p>
         {% endif %}
     </div>
+    <div>
+        <header class="w3-panel w3-border w3-round-xxlarge">
+            <h2>Logger</h2>
+        </header>
+        
+        <form action="/" method="post">
+            <textarea name="textarea" class="w3-input" placeholder="Log text here"></textarea>
+            <br>
+            <button class="w3-button w3-black w3-round" class="w3-button w3-light-blue" type="submit" name="get_cookies" value="true">Log Text</button>
+        </form>
+        {% if logged_text %}
+        <h3>Logged Text:</h3>
+        <p>{{ logged_text }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
