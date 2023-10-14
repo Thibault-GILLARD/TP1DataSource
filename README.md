@@ -4,14 +4,77 @@ Thibault Gillard
 
 ## TP2 Results
 
-![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2016.33.20.gif?raw=true)
+![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2017.28.43.gif?raw=true)
 
 For the TP2 the stategie was to do the different tasks in different roots and when everything was working to merge them all together into the main root, with some css to make it look better.
 
-First was to Manipulate cookies:
+First was to Manipulate cookies and logger:
     
-    ```python   
-    
+```python
+if request.method == 'POST':
+        text = request.form.get('textarea')
+        print(text)
+        
+        return render_template('logger.html', text=text)
+
+    return render_template('logger.html')
+````
+```python
+if request.method == 'POST':
+        # Make a request to Google
+        try:
+            req = requests.get("https://analytics.google.com/analytics/web/#/p407435764/reports/dashboard?r=reporting-hub")
+            # Get the cookies in cookies.html
+            cookies = req.cookies
+            # Return the cookies
+            
+            eq2 = requests.get("https://www.googletagmanager.com/gtag/js?id=G-WVM9JHZGF4")
+            return render_template('cookies.html', cookies=cookies)
+        except:
+            return "Error"
+         
+    return render_template('cookies.html')
+````
+
+I used a render Template to display the cookies and the logger, and a request to get the cookies from the google analytics website.
+
+Then for the Request with oauth i used this websit to help me :
+https://www.lupagedigital.com/blog/google-analytics-api-python/
+
+It was still hard...
+
+And then I had to do specific request to get the data from the google analytics website:
+
+
+```python
+request_api = RunReportRequest(
+    property=f"properties/{property_id}",
+    dimensions=[Dimension(name="sessionSource")],
+    metrics=[
+             Metric(name="totalUsers"),
+             ],
+    date_ranges=[DateRange(start_date=starting_date, end_date=ending_date)],
+)
+
+try:
+    response = client.run_report(request_api)
+    print("Data access successful.")
+except Exception as e:
+    print("Error accessing Google Analytics data:", str(e))
+````
+
+And finaly get the good information from 'response' and display it :
+
+```python
+# Execute the report request to fetch the data
+response = client.run_report(request_api)
+
+# Extract the row count because it corresponds to the number of users
+row_count = response.row_count
+```
+
+At the end i could creat the main page with all the information and the css to make it look better using W3Schools.
+
 
 ## TP1 Results
 
