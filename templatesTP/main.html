@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <header class="w3-container w3-teal">
+        <h1>Thibault Gillard Data Source :)</h1>
+    </header>
+    <div>
+        <header class="w3-panel w3-border w3-round-xxlarge">
+            <h2>Get Google Analytics Cookies</h2>
+        </header>
+        
+        <form action="/" method="post">
+            <button class="w3-button w3-black w3-round" class="w3-button w3-light-blue" type="submit" name="get_cookies" value="true">Get Cookies</button>
+        </form>
+        {% if cookies %}
+        <h3>Cookies:</h3>
+        <pre>{{ cookies }}</pre>
+        {% endif %}
+    </div>
+    <div>
+        <header class="w3-panel w3-border w3-round-xxlarge">
+            <h2>Fetch Google Analytics Data</h2>
+        </header>
+        
+        <form action="/" method="post">
+            <button class="w3-button w3-black w3-round" class="w3-button w3-light-blue" type="submit" name="fetch_data" value="true">Fetch Data</button>
+        </form>
+        {% if row_count is defined %}
+        <h3>Number of Users:</h3>
+        <p>{{ row_count }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
