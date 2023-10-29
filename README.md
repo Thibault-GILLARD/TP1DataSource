@@ -23,7 +23,7 @@ try:
     print("Data access successful.")
 except Exception as e:
     print("Error accessing Google Analytics data:", str(e))
-````
+```
 ```Python
 @app.route("/trend2", methods=['GET', 'POST'])
 def trend_form2():
@@ -58,7 +58,7 @@ def trend_form2():
 ```
 Part 2 in the file test.py
 
-![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2017.28.43.gif?raw=true)
+![Image Description](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Capture%20d%E2%80%99%C3%A9cran%202023-10-24%20%C3%A0%2009.49.20.png)
 ## TP2 Results
 
 ![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2017.28.43.gif?raw=true)
