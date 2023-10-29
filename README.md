@@ -1,5 +1,64 @@
 # DataSource Thibault Gillard
 
+## TP3 
+```Python
+property_id = "407435764"
+starting_date = "30daysAgo"
+ending_date = "yesterday"
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/Users/thibaultgillard/Documents/EPF/5A/Data_Source/TP1/key.json'
+
+client = BetaAnalyticsDataClient()
+
+request_api = RunReportRequest(
+    property=f"properties/{property_id}",
+    dimensions=[Dimension(name="sessionSource")],
+    metrics=[
+             Metric(name="totalUsers"),
+             ],
+    date_ranges=[DateRange(start_date=starting_date, end_date=ending_date)],
+)
+try:
+    response = client.run_report(request_api)
+    print("Data access successful.")
+except Exception as e:
+    print("Error accessing Google Analytics data:", str(e))
+````
+```Python
+@app.route("/trend2", methods=['GET', 'POST'])
+def trend_form2():
+    data = {}  # Initialize data as an empty dictionary
+
+    if request.method == 'POST':
+        # Make a request to Google
+        try:
+            pytrend = TrendReq(hl='en-US', tz=360)
+            kw_list = ["Israel"]
+            geo = 'US'
+            df = get_interest(pytrend, kw_list, geo)
+
+            # Extract the required data
+            labels = df.index.strftime('%Y-%m-%d').tolist()
+            values = df['Israel'].tolist()
+
+            data = dict(zip(labels, values))
+            print(data)
+
+            # Format data for Chart.js
+            chart_labels = labels
+            chart_data = values
+            print(chart_labels)
+            print(chart_data)
+        except Exception as e:
+            return f"Error: {str(e)}"
+
+        return render_template('trend.html', labels=chart_labels, data=chart_data)
+
+    return render_template('trend.html', labels=[], data=[])
+```
+Part 2 in the file test.py
+
+![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2017.28.43.gif?raw=true)
 ## TP2 Results
 
 ![yes](https://github.com/Thibault-GILLARD/TP1DataSource/blob/master/source/Video%20to%20GIF%202023-10-14%2017.28.43.gif?raw=true)

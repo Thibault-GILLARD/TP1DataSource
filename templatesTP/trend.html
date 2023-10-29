@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Trends Data</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.27.0/luxon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/chart.min.js"></script>
+</head>
+<body>
+    <h1>Google Trends Data</h1>
+    <form method="POST" action="/trend2"> <!-- Form for sending a POST request -->
+        <input type="submit" value="Get Data"> <!-- Submit button to trigger the POST request -->
+    </form>
+
+    <h2>Trend Comparison Chart</h2>
+    <canvas id="trendChart"></canvas>
+
+    <script>
+        console.log("Script is running"); 
+        var labels = {{ labels | tojson | safe }};
+        var data = {{ data | tojson | safe }};
+    
+        console.log("Labels:", labels); 
+        console.log("Data:", data); /
+    
+        var ctx = document.getElementById('trendChart').getContext('2d');
+        var trendChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Trend Comparison',
+                    data: data,
+                    borderColor: "#3e95cd",
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'month'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Trend Value'
+                        }
+                    }
+                }
+            }
+        });
+    </script>    
+</body>
+</html>
